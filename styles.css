@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Space+Mono:400,700);
+
+body {
+    background: #FFBE0B; 
+    font-family: "Space Mono", sans-serif;
+    font-weight:400;
+    font-size: 0.8em;
+    color: #aaa;
+    display:flex; 
+  }
+
+.toDo {
+    width:100%;
+    max-width:540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.toDo h2{
+  color: black;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1dcad8;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+  color:#fff;
+}
+
+.addTaskBtn {
+    border: none;
+    outline: none;
+    padding: 16px 20px;
+    background: #f26104;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    
+  }
