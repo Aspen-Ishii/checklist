@@ -29,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1dcad8;
+  background: #1CCAD8;
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
@@ -49,10 +49,45 @@ input {
     border: none;
     outline: none;
     padding: 16px 20px;
-    background: #f26104;
+    background: #d8641c;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 40px;
-    
+    border-radius: 40px; 
   }
+
+  ul li{
+    list-style: none;
+    background-color:#f8f8f8;
+    box-shadow: 0 0 2px hsla(0,0%,0%,0.2);
+    margin: auto;
+    border-radius: 6px;
+    font-size:1.4em;
+    border:0;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: text;
+    position: relative;
+  }
+  
+  ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+  }
+ul li.checked{
+  color: #47D185;
+}
+
+li.checked::before {
+  background-image: url();
+  font: var(--fa-font-solid);
+  content: '\f058';  
+}

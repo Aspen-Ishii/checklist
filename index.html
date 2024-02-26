@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check List</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/de7e8fa6ac.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container"></div>
@@ -12,10 +14,13 @@
             <h2>To-Do List</h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="+ New Task">
-                <button class="addTaskBtn">+</button>
-
-
+                <button class="addTaskBtn" onclick="addTask()">+</button>
             </div>
+            <ul id="list-container">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            </ul>
         </div>
     </div>
 
