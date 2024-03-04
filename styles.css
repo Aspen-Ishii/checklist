@@ -1,93 +1,135 @@
 @import url(https://fonts.googleapis.com/css?family=Space+Mono:400,700);
 
-body {
-    background: #FFBE0B; 
-    font-family: "Space Mono", sans-serif;
-    font-weight:400;
-    font-size: 0.8em;
-    color: #aaa;
-    display:flex; 
-  }
-
-.toDo {
-    width:100%;
-    max-width:540px;
-    background: #fff;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
+/* removes all padding and margin from elements that have them applied by default */
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  background: #FFBE0B;
 }
 
-.toDo h2{
-  color: black;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+.container{
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  background: white;
+  border-radius: 10px;
+  min-width: 450px;
+  position: absolute;
+  min-height: 100px;
+  transform: translate(-50%,-50%);
+}
+#newTask{
+  position: relative;
+  padding: 30px 20px;
+}
+#newTask input{
+  width: 75%;
+  height: 45px;
+  padding: 12px;
+  color: #111111;
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+  font-family: "Space Mono", sans-serif;
+  font-weight:400;
+  font-size: 0.8em;
+  border: 2px solid #d1d3d4;
 }
 
-.row {
-  display: flex;
+/* interactive text box highlight */
+#newTask input:focus{
+  outline: none;
+  border-color: #0d75ec;
+}
+#newTask button{
+  position: relative;
+  float: right;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #d8641c;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  width: 20%;
+  height: 45px;
+  border-radius: 40px;
+  font-family: "Space Mono", sans-serif;
+}
+#taskList{
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  padding: 30px 20px;
+  margin-top: 10px;
+}
+.taskList{
+  border-radius: 5px;
   align-items: center;
   justify-content: space-between;
-  background: #1CCAD8;
-  border-radius: 30px;
-  padding-left: 20px;
-  margin-bottom: 25px;
+  border: 1px solid #939697;
+  cursor: pointer;
+  background-color: #c5e1e6;
+  height: 50px;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  display: flex;
 }
-
-input {
-  flex: 1;
+.taskList span{
+  font-family: "Space Mono", sans-serif;
+  font-weight:400;
+  font-size: 0.8em;
+}
+.taskList button{
+  background-color: #6583e5;
+  color: #ffffff;
   border: none;
+  cursor: pointer;
   outline: none;
-  background: transparent;
-  padding: 10px;
-  font-weight: 14px;
-  color:#fff;
+  height: 100%;
+  width: 40px;
+  border-radius: 5px;
 }
 
-.addTaskBtn {
-    border: none;
-    outline: none;
-    padding: 16px 20px;
-    background: #d8641c;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 40px; 
-  }
+ul li{
+  list-style: none;
+  background-color:#f8f8f8;
+  box-shadow: 0 0 2px hsla(0,0%,0%,0.2);
+  margin: auto;
+  border-radius: 6px;
+  font-size:1.4em;
+  border:0;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: text;
+  position: relative;
+}
 
-  ul li{
-    list-style: none;
-    background-color:#f8f8f8;
-    box-shadow: 0 0 2px hsla(0,0%,0%,0.2);
-    margin: auto;
-    border-radius: 6px;
-    font-size:1.4em;
-    border:0;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: text;
-    position: relative;
-  }
-  
-  ul li::before {
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: none;
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
-  }
+ul li::before {
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: none;
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
 ul li.checked{
-  color: #47D185;
+color: #47D185;
 }
 
 li.checked::before {
-  background-image: url();
-  font: var(--fa-font-solid);
-  content: '\f058';  
+background-image: url();
+font: var(--fa-font-solid);
+content: '\f058';  
 }

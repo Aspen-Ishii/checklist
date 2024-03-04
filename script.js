@@ -1,18 +1,24 @@
-var inputBox = document.getElementById("input-box");
-var listContainer = document.getElementById("list-container");
+document.getElementById('addTaskBtn').onclick = function(){
+    console.log('working');
+    if(document.querySelector('#newTask input').value.length == 0){
+        alert("Error: Must enter text")
+    } else {
+        document.querySelector('#taskList').innerHTML += `
+            <div class="task">
+                <span id="taskList">
+                    ${document.querySelector('#newTask input').value}
+                </span>
+                <button class="delete">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        `;
 
-function addTask(){
-    if (inputBox.value === ""){ 
-        console.log("working");
-        alert(`Please enter text`);
+        var current_task = document.querySelectorAll(".delete");
+        for(var i=0; i<current_task.length; i++){
+            current_task[i].onclick = function(){
+                this.parentNode.remove();
+            }
+        }
     }
-    else{
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement("span")
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-    }
-    inputBox.value = "";
 }
