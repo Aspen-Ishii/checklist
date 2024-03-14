@@ -1,42 +1,13 @@
-    
-    
-    document.getElementById('addTaskBtn').onclick = function(){
-        console.log('working'); 
-    
+document.getElementById('addTaskBtn').onclick = function(){
+    console.log('clicked');
     if(document.querySelector('#newTask input').value.length == 0){
-        alert("Error: Must enter text")
+        alert("Error: Must enter text");
     } else {
         // Create a new list item
         let listItem = document.createElement('li');
         listItem.textContent = document.querySelector('#newTask input').value;
-        
-        /* 1st order
-        first = function () {
-            listItem.firstElementChild;
-        }
-        */
-    /*
-    // Checked Button
-        //Create check button for list item 
-        let checkBTN = document.createElement('button');
-        checkBTN.innerHTML = '<i class="fa-regular fa-circle"></i>';
-        checkBTN.classList.add('checked')
-         // Append the check button to the list item
-        listItem.appendChild(checkBTN);
-        
-    //*****listItem.insertBefore(checkBTN, listItem.firstChild); 
 
-         // Append the list item to the task list
-         document.querySelector('#taskList').appendChild(listItem);
- 
-         // Attach event listener to the checked button
-         checkBTN.onclick = function init() { 
-                document.getElementById("listItem").style.color = 'green';
-              }
-            /*var bottom = document.querySelector('.taskList li');
-        */
-
-    // Delete Button
+/// Delete Button
         // Create a delete button for the list item
         let deleteBTN = document.createElement('button');
         deleteBTN.innerHTML = '<i id=bye class="fa-solid fa-circle-xmark"></i>';
@@ -45,20 +16,38 @@
         // Append the delete button to the list item
         listItem.appendChild(deleteBTN);
 
-        // Append the list item to the task list
-        document.querySelector('#taskList').appendChild(listItem);
-
         // Attach event listener to the delete button
         deleteBTN.onclick = function(){
             this.parentNode.remove();
-        }
-    
+        };
 
         // Clear the input field after adding the task
         document.querySelector('#newTask input').value = '';
-        
 
-        
+    /// Checked Button
+        // Create check button for list item 
+        let checkBTN = document.createElement('button');
+        checkBTN.innerHTML = '<i class="fa-regular fa-circle"></i>';
+        checkBTN.classList.add('checked');
+
+        // Append the check button to the list item
+        listItem.appendChild(checkBTN);
+
+        // Attach event listener to the checked button
+        checkBTN.onclick = function() { 
+            listItem.style.color = 'green';
         };
-    };
 
+        // Append the list item to the task list
+        document.querySelector('#taskList').appendChild(listItem);
+    }
+};
+
+document.addEventListener('keypress', function(event) {
+    var keycode = event.keyCode ? event.keyCode : event.which;
+    if (keycode === 13) { // 13 is the keycode for Enter key
+        event.preventDefault(); // Prevent default action of keypress event
+        document.getElementById('addTaskBtn').click(); // Simulate a click on the button
+        console.log ('entered');
+    }
+});
