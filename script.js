@@ -33,10 +33,24 @@ document.getElementById('addTaskBtn').onclick = function(){
         // Append the check button to the list item
         listItem.appendChild(checkBTN);
 
-        // Attach event listener to the checked button
+        // Attach event listeners to the checked button
         checkBTN.onclick = function() { 
+            listItem.style.backgroundColor = "rgba(0,255,0,0.2";
             listItem.style.color = 'green';
+            checkBTN.style.backgroundColor = "rgba(0,255,0,0.2";
+            deleteBTN.style.backgroundColor = "rgba(0,255,0,0.2";
+            // Toggle between different Font Awesome classes
+            if (checkBTN.classList.contains("fa-circle")) {
+                checkBTN.classList.remove("fa-circle");
+                checkBTN.classList.add("fa-check-circle");
+            } else {
+                checkBTN.classList.remove("fa-check-circle");
+                checkBTN.classList.add("fa-circle");
+            }
         };
+
+        
+
 
         // Append the list item to the task list
         document.querySelector('#taskList').appendChild(listItem);
