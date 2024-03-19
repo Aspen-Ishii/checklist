@@ -27,33 +27,40 @@ document.getElementById('addTaskBtn').onclick = function(){
     /// Checked Button
         // Create check button for list item 
         let checkBTN = document.createElement('button');
-        checkBTN.innerHTML = '<i class="fa-regular fa-circle"></i>';
+        checkBTN.innerHTML = '<i class="fa-solid fa-check-circle"></i>';
         checkBTN.classList.add('checked');
 
         // Append the check button to the list item
         listItem.appendChild(checkBTN);
 
+        //create 2 different styles for the list item (done and notDone)
+        let done = function () {
+        listItem.style.backgroundColor = "rgba(0,255,0,0.2";
+        listItem.style.color = 'green';
+        checkBTN.style.backgroundColor = "rgba(0,255,0,0.2";
+        deleteBTN.style.backgroundColor = "rgba(0,255,0,0.2";
+        };
+
+        let notDone = function () {
+        listItem.style.backgroundColor = "";
+        listItem.style.color = '';
+        checkBTN.style.backgroundColor = "";
+        deleteBTN.style.backgroundColor = "";
+        }
+        // Toggle between "done" and "notDone" functions when checkBTN is clicked
         // Attach event listeners to the checked button
-        checkBTN.onclick = function() { 
-            listItem.style.backgroundColor = "rgba(0,255,0,0.2";
-            listItem.style.color = 'green';
-            checkBTN.style.backgroundColor = "rgba(0,255,0,0.2";
-            deleteBTN.style.backgroundColor = "rgba(0,255,0,0.2";
-            // Toggle between different Font Awesome classes
-            if (checkBTN.classList.contains("fa-circle")) {
-                checkBTN.classList.remove("fa-circle");
-                checkBTN.classList.add("fa-check-circle");
+        checkBTN.onclick = function() {
+            if (listItem.classList.contains('done')) {
+                notDone();
+                listItem.classList.remove('done');
             } else {
-                checkBTN.classList.remove("fa-check-circle");
-                checkBTN.classList.add("fa-circle");
+                done();
+                listItem.classList.add('done');
             }
         };
 
-        
-
-
         // Append the list item to the task list
-        document.querySelector('#taskList').appendChild(listItem);
+            document.querySelector('#taskList').appendChild(listItem);
     }
 };
 
@@ -65,3 +72,4 @@ document.addEventListener('keypress', function(event) {
         console.log ('entered');
     }
 });
+
