@@ -9,12 +9,13 @@ document.addEventListener('keypress', function(event) {
 });
 document.getElementById('addTaskBtn').onclick = function(){
     console.log('clicked');
-    if(document.querySelector('#newTask input').value.length == 0){
+    let input = document.querySelector('#newTask input');
+    if(input.value.length == 0){
         alert("Error: Must enter text");
     } else {
         // Create a new list item
         let listItem = document.createElement('li');
-        listItem.textContent = document.querySelector('#newTask input').value;
+        listItem.textContent = input.value;
 
 /// Delete Button
         // Create a delete button for the list item
@@ -27,11 +28,12 @@ document.getElementById('addTaskBtn').onclick = function(){
 
         // Attach event listener to the delete button
         deleteBTN.onclick = function(){
-            this.parentNode.remove();
+            listItem.remove();
+            saveTask();
         };
 
         // Clear the input field after adding the task
-        document.querySelector('#newTask input').value = '';
+        input.value = '';
 
     /// Checked Button
         // Create check button for list item 
@@ -66,9 +68,49 @@ document.getElementById('addTaskBtn').onclick = function(){
                 done();
                 listItem.classList.add('done');
             }
+            saveTask();
         };
 
         // Append the list item to the task list
             document.querySelector('#taskList').appendChild(listItem);
+        
+        // Save tasks to local storage
+        saveTask();
     }
+};
+
+// Function to save tasks to local storage
+function saveTask() {
+    let tasks = [];
+    let listItems = document.querySelectorAll('#taskList li');
+    listItems.forEach(item => {
+        tasks.push(item.textContent);
+    });
+    localStorage.setItem('listItems', JSON.stringify(tasks));
+}
+
+// Function to load tasks from local storage
+function loadTasks() {
+    let savedTasks = localStorage.getItem('listItems');
+    if (savedTasks) {
+        let tasks = JSON.parse(savedTasks);
+        tasks.forEach(task => {
+            addTask(task);
+        });
+    }
+}
+
+// Load tasks when the page loads
+window.onload = function() {
+    loadTasks();
+};
+
+// Function to add a task from loaded tasks
+function addTask(taskText) {
+    let listItem = document.createElement('li');
+    listItem.textContent = taskText;
+     // Append the list item to the task list
+     document.querySelector('#taskList').appendChild(listItem);
+
+    console.log(window.localStorage)
 };
