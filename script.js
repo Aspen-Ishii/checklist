@@ -1,3 +1,12 @@
+//submit input with mouse click or enter key
+document.addEventListener('keypress', function(event) {
+    var keycode = event.keyCode ? event.keyCode : event.which;
+    if (keycode === 13) { // 13 is the keycode for Enter key
+        event.preventDefault(); // Prevent default action of keypress event
+        document.getElementById('addTaskBtn').click(); // Simulate a click on the button
+        console.log ('entered');
+    }
+});
 document.getElementById('addTaskBtn').onclick = function(){
     console.log('clicked');
     if(document.querySelector('#newTask input').value.length == 0){
@@ -63,13 +72,3 @@ document.getElementById('addTaskBtn').onclick = function(){
             document.querySelector('#taskList').appendChild(listItem);
     }
 };
-
-document.addEventListener('keypress', function(event) {
-    var keycode = event.keyCode ? event.keyCode : event.which;
-    if (keycode === 13) { // 13 is the keycode for Enter key
-        event.preventDefault(); // Prevent default action of keypress event
-        document.getElementById('addTaskBtn').click(); // Simulate a click on the button
-        console.log ('entered');
-    }
-});
-
