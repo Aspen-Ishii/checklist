@@ -13,6 +13,13 @@ body{
   background: #FFBE0B;
 }
 
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container{
   width: 40%;
   top: 50%;

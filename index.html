@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check List</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    
     <script src="https://kit.fontawesome.com/de7e8fa6ac.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,14 +13,17 @@
     <div class="container">
         <div id="newTask">
             <input type="text" id="input-box" placeholder="Add New Task">
-            <button id="addTaskBtn">+</button>
+            <button id="addTaskBtn"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div id="taskList">
             <h2 id="listName"></h2>
-            <!-- Tasks will be added here -->
+            <ul class="to-do-list">
+                <!-- Tasks will be added here -->
+            </ul>
         </div>
     </div>
 </div>
 
 </body>
+<script src="script.js" defer></script>
 </html>
