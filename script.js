@@ -218,6 +218,10 @@ function renderTask(taskText) {
         // Attach event listener to the delete button
         deleteBTN.onclick = function(){
             listItem.remove();
+            const index = taskArray.findIndex(task => task.text === taskText);
+            if (index !== -1) {
+                taskArray.splice(index, 1); // Remove the task from the array
+            }
             saveTasks(taskArray); // Update local storage after removing the task
         };
 
