@@ -47,7 +47,7 @@ document.getElementById('addTaskBtn').onclick = function(){
         };
         taskArray.push(newTask);
         saveTasks(taskArray);
-        renderTask(taskText);
+        renderTask(taskText, false);
         input.value = '';
     }
     // Clear the input field after adding the task
@@ -68,6 +68,10 @@ function renderTask(taskText, done) {
     const checkBTN = document.createElement('button');
     checkBTN.innerHTML = '<i class="fa-solid fa-check-circle"></i>';
     checkBTN.classList.add('checked');
+
+    if (done) {
+        listItem.classList.add('done');
+    }
 
     //create 2 different styles for the list item (done and notDone)
     function doneStyle (listItem) {
@@ -110,6 +114,9 @@ listItem.appendChild(deleteBTN);
     // Toggle between "done" and "notDone" functions when checkBTN is clicked
     // Attach event listeners to the checked button
     checkBTN.onclick = function() {
+        const index = taskArray.findIndex(task => task.text === taskText);
+        taskArray[index].done = !taskArray[index].done;
+        
         if (listItem.classList.contains('done')) {
             notDoneStyle(listItem, checkBTN);
             listItem.classList.remove('done');
