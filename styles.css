@@ -11,6 +11,12 @@
 body{
   height: 100vh;
   background: #FFBE0B;
+  padding: 25px;
+	text-align: right;
+}
+
+html {
+	font-size: 8px;
 }
 
 main{
@@ -47,6 +53,87 @@ main{
   font-weight:400;
   font-size: 0.8em;
   border: 2px solid #d1d3d4;
+}
+
+/* Wrapper */
+.icon-button {
+	background-color: white;
+	border-radius: 3.6rem;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2.0rem;
+	height: 3.6rem;
+	line-height: 3.6rem;
+	margin: 0 5px;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	width: 3.6rem;
+}
+
+/* Circle */
+.icon-button span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 0;
+}
+.icon-button:hover span {
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 3.6rem;
+	margin: -1.8rem;
+}
+.linkedin span {
+	background-color: #0077b5;
+}
+.github span {
+  background-color: #111111;
+}
+
+/* Icons */
+.icon-button i {
+	background: none;
+	color: black;
+	height: 3.6rem;
+	left: 0;
+	line-height: 3.6rem;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 3.6rem;
+	z-index: 10;
+}
+
+.icon-button .icon-linkedin {
+	color: #3B5998;
+}
+
+.icon-button .icon-github {
+  color:#1116;
+}
+
+.icon-button:hover .icon-linkedin,
+.icon-button:hover .icon-github {
+	color: white;
+}
+
+.icon-button i:hover {
+  color: white;
 }
 
 /* interactive text box highlight */
@@ -147,6 +234,9 @@ li:hover {
   content: '\f058';
 }
 
+
+
+
 /*
 .listItem:hover::before {
   font-family: 'Font Awesome 5 Free';
@@ -225,3 +315,4 @@ font: var(--fa-font-solid);
 content: '\f058';  
 }
 */ 
+
