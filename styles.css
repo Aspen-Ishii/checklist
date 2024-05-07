@@ -15,10 +15,6 @@ body{
 	text-align: right;
 }
 
-html {
-	font-size: 8px;
-}
-
 main{
   display: flex;
   flex-direction: column;
@@ -55,15 +51,15 @@ main{
   border: 2px solid #d1d3d4;
 }
 
-/* Wrapper */
+/* icon wrapper */
 .icon-button {
 	background-color: white;
-	border-radius: 3.6rem;
+	border-radius: 2.0rem;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 2.0rem;
-	height: 3.6rem;
-	line-height: 3.6rem;
+	font-size: 1.5rem;
+	height: 2.0rem;
+	line-height: 2.0rem;
 	margin: 0 5px;
 	position: relative;
 	text-align: center;
@@ -71,10 +67,10 @@ main{
 	   -moz-user-select: none;
 	    -ms-user-select: none;
 	        user-select: none;
-	width: 3.6rem;
+	width: 2.0rem;
 }
 
-/* Circle */
+/* icon circle */
 .icon-button span {
 	border-radius: 0;
 	display: block;
@@ -90,10 +86,10 @@ main{
 	width: 0;
 }
 .icon-button:hover span {
-	width: 3.6rem;
-	height: 3.6rem;
-	border-radius: 3.6rem;
-	margin: -1.8rem;
+	width: 2.0rem;
+	height: 2.0rem;
+	border-radius: 2.0rem;
+	margin: -1.0rem;
 }
 .linkedin span {
 	background-color: #0077b5;
@@ -106,21 +102,22 @@ main{
 .icon-button i {
 	background: none;
 	color: black;
-	height: 3.6rem;
+	height: 2.0rem;
 	left: 0;
-	line-height: 3.6rem;
+	line-height: 2.0rem;
 	position: absolute;
 	top: 0;
 	-webkit-transition: all 0.3s;
 	   -moz-transition: all 0.3s;
 	     -o-transition: all 0.3s;
 	        transition: all 0.3s;
-	width: 3.6rem;
+	width: 2.0rem;
 	z-index: 10;
 }
 
 .icon-button .icon-linkedin {
 	color: #3B5998;
+
 }
 
 .icon-button .icon-github {
