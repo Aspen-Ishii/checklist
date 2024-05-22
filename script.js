@@ -98,8 +98,9 @@ if (done) {
     notDoneStyle(listItem);
 }
 
+
 //order completed list items together 
-const ordered = taskArray.sort ((a,b) => a.done >b.done ? 1 : -1);
+const ordered = taskArray.sort ((a,b) => a.done > b.done ? 1 : -1);
 
 // Attach event listener to the delete button
 deleteBTN.onclick = function(){
